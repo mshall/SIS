@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="colorAccent">#ffd103</color>
+    <color name="colorPrimaryLight">#BBDEFB</color>
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="ripple">#FF7043</color>
+    <color name="pager_indicator">#EA9B08</color>
+    <color name="gray_backgrouns">#e7e7e7</color>
+    <color name="card_white">#fafafa</color>
+    <color name="black">#000000</color>
+    <color name="sample_green">#00B551</color>
+    <color name="green">#4CAF50</color>
+    <!--_____________Welcome screens colors _______________-->
+    <color name="blue_background">#1976D2</color>
+    <color name="teal_background">#00796B</color>
+    <color name="orange_background">#F57C00</color>
+    <color name="red_background">#D32F2F</color>
+    <color name="purple_background">#7B1FA2</color>s
+
+
+    <!--______________ Radio button ___________-->
+    <color name="mc_title_bar">#FF16C2DD</color>
+    <color name="mc_state_pressed">#FF1088DD</color>
+
+
+    <color name="item_selected_background_color">#C7C7CC</color>
+    <color name="image_placeholder_background_color">#C7C7CC</color>
+    <color name="divider_color">#C7C7CC</color>
+    <color name="app_background_color">#FAFAFA</color>
+
+    <color name="light_grey">#ebebeb</color>
+
+</resources>

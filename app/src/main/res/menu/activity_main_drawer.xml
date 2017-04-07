@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_camera" android:icon="@drawable/ic_menu_camera"
+            android:title="@string/my_profile" />
+        <item android:id="@+id/nav_gallery" android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/survey" />
+        <item android:id="@+id/nav_slideshow" android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/full_plan" />
+    </group>
+
+    <item android:title="@string/courses">
+        <menu>
+            <item android:id="@+id/nav_registered_courses" android:icon="@drawable/ic_menu_share"
+                android:title="@string/registered_courses" />
+            <item android:id="@+id/nav_completed_courses" android:icon="@drawable/ic_menu_send"
+                android:title="@string/completed_courses" />
+            <item android:id="@+id/nav_remaining_courses" android:icon="@drawable/ic_menu_send"
+                android:title="@string/remaining_courses" />
+        </menu>
+    </item>
+    <item android:title="@string/notifications">
+        <menu>
+            <item android:id="@+id/nav_notifications" android:icon="@drawable/ic_menu_share"
+                android:title="@string/registered_courses" />
+        </menu>
+    </item>
+
+</menu>
