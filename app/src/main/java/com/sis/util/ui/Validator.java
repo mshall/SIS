@@ -3,7 +3,7 @@ package com.sis.util.ui;
 import android.content.Context;
 import android.widget.EditText;
 
-import com.addpluseg.R;
+import com.sis.R;
 
 import java.util.ArrayList;
 

@@ -2,23 +2,22 @@ package com.sis.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by Mohamed S. El-Shall on 4/7/2017.
+ * Created by Mohamed S. El-Shall on 4/8/2017.
  */
 
-public class RemainingCourses implements Serializable {
+public class CompletedCourses {
 
 
     /**
      * response : success
-     * data : [{"dept_id":"2","course":{"id":"3","name":"course3","description":"for test","course_number":"15345","dept_id":"2","type":"required","hours":"2","points":"4","years":"2015/2016","semester":"first","level":"1","status":"closed","first_exam":"25","second_exam":"25","final_exam":"50"}}]
+     * data : [{"course":{"id":"2","name":"course2","description":"for test","course_number":"12345","dept_id":"2","type":"temp","hours":"3","points":"4","years":"2015/2016","semester":"second","level":"1","status":"open","first_exam":"25","second_exam":"25","final_exam":"50"}},{"course":{"id":"3","name":"course3","description":"for test","course_number":"15345","dept_id":"2","type":"required","hours":"2","points":"4","years":"2015/2016","semester":"first","level":"1","status":"closed","first_exam":"25","second_exam":"25","final_exam":"50"}}]
      */
     @SerializedName("response")
     private String response;
-    @SerializedName("data")
+    @SerializedName("response")
     private List<DataBean> data;
 
     public String getResponse() {
@@ -39,21 +38,10 @@ public class RemainingCourses implements Serializable {
 
     public static class DataBean {
         /**
-         * dept_id : 2
-         * course : {"id":"3","name":"course3","description":"for test","course_number":"15345","dept_id":"2","type":"required","hours":"2","points":"4","years":"2015/2016","semester":"first","level":"1","status":"closed","first_exam":"25","second_exam":"25","final_exam":"50"}
+         * course : {"id":"2","name":"course2","description":"for test","course_number":"12345","dept_id":"2","type":"temp","hours":"3","points":"4","years":"2015/2016","semester":"second","level":"1","status":"open","first_exam":"25","second_exam":"25","final_exam":"50"}
          */
-        @SerializedName("dept_id")
-        private String dept_id;
-        @SerializedName("course")
+        @SerializedName("response")
         private CourseBean course;
-
-        public String getDept_id() {
-            return dept_id;
-        }
-
-        public void setDept_id(String dept_id) {
-            this.dept_id = dept_id;
-        }
 
         public CourseBean getCourse() {
             return course;
@@ -65,53 +53,38 @@ public class RemainingCourses implements Serializable {
 
         public static class CourseBean {
             /**
-             * id : 3
-             * name : course3
+             * id : 2
+             * name : course2
              * description : for test
-             * course_number : 15345
+             * course_number : 12345
              * dept_id : 2
-             * type : required
-             * hours : 2
+             * type : temp
+             * hours : 3
              * points : 4
              * years : 2015/2016
-             * semester : first
+             * semester : second
              * level : 1
-             * status : closed
+             * status : open
              * first_exam : 25
              * second_exam : 25
              * final_exam : 50
              */
-            @SerializedName("id")
-            private String id;
-            @SerializedName("name")
-            private String name;
-            @SerializedName("description")
-            private String description;
-            @SerializedName("course_number")
-            private String course_number;
-            @SerializedName("dept_id")
-            private String dept_id;
-            @SerializedName("type")
-            private String type;
-            @SerializedName("hours")
-            private String hours;
-            @SerializedName("points")
-            private String points;
-            @SerializedName("years")
-            private String years;
-            @SerializedName("semester")
-            private String semester;
-            @SerializedName("level")
-            private String level;
-            @SerializedName("status")
-            private String status;
-            @SerializedName("first_exam")
-            private String first_exam;
-            @SerializedName("second_exam")
-            private String second_exam;
-            @SerializedName("final_exam")
-            private String final_exam;
 
+            private String id;
+            private String name;
+            private String description;
+            private String course_number;
+            private String dept_id;
+            private String type;
+            private String hours;
+            private String points;
+            private String years;
+            private String semester;
+            private String level;
+            private String status;
+            private String first_exam;
+            private String second_exam;
+            private String final_exam;
 
             public String getId() {
                 return id;

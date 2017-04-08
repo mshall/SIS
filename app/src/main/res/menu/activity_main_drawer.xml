@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_camera" android:icon="@drawable/ic_menu_camera"
+        <item android:id="@+id/nav_my_profile" android:icon="@drawable/ic_menu_camera"
             android:title="@string/my_profile" />
-        <item android:id="@+id/nav_gallery" android:icon="@drawable/ic_menu_gallery"
+        <item android:id="@+id/nav_survey" android:icon="@drawable/ic_menu_gallery"
             android:title="@string/survey" />
-        <item android:id="@+id/nav_slideshow" android:icon="@drawable/ic_menu_slideshow"
+        <item android:id="@+id/nav_full_plan" android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/full_plan" />
     </group>
 
@@ -23,6 +23,7 @@
     <item android:title="@string/notifications">
         <menu>
             <item android:id="@+id/nav_notifications" android:icon="@drawable/ic_menu_share"
+
                 android:title="@string/registered_courses" />
         </menu>
     </item>

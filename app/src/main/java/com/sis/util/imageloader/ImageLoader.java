@@ -15,9 +15,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.sis.util.image.CircleTransform;
+import com.sis.util.image.ImageUtils;
 import com.squareup.picasso.Picasso;
-import com.util.image.CircleTransform;
-import com.util.image.ImageUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

@@ -3,9 +3,7 @@ package com.sis.util.misc;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.constants.Constants;
-import com.google.gson.Gson;
-import com.pojo.User;
+import com.sis.util.Constants;
 
 /**
  * Created by elsaidel on 1/16/2017.
@@ -93,10 +91,10 @@ public class SharedPreferencesUtils {
     //----------------------------------------------------------------------------------------------
     //Get User data from shared preferences
     //----------------------------------------------------------------------------------------------
-    public static User getUserDataFromSharedPreferences(Context context) {
+   /* public static User getUserDataFromSharedPreferences(Context context) {
         Gson gson = new Gson();
         SharedPreferences sharedPreferences = context.getSharedPreferences(Constants.SHRED_PREFS_KEY, Context.MODE_PRIVATE);
-        String json = sharedPreferences.getString(Constants.USER, " ");
+        String json = sharedPreferences.getString(Constants.User, " ");
         return gson.fromJson(json, User.class);
     }
 
@@ -107,5 +105,5 @@ public class SharedPreferencesUtils {
         Gson gson = new Gson();
         SharedPreferences sharedPreferences = context.getSharedPreferences(Constants.SHRED_PREFS_KEY, Context.MODE_PRIVATE);
         sharedPreferences.edit().putString(Constants.USER, gson.toJson(user)).commit();
-    }
+    }*/
 }

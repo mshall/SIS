@@ -17,4 +17,9 @@
     <string name="survey">Survey</string>
     <string name="full_plan">Full plan</string>
     <string name="notifications">Notifications</string>
+    <string name="dummy_text">Dummy Text</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="required">Required</string>
 </resources>

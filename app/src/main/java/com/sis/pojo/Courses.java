@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Mohamed S. El-Shall on 4/7/2017.
  */
 
-public class RemainingCourses implements Serializable {
+public class Courses implements Serializable {
 
 
     /**

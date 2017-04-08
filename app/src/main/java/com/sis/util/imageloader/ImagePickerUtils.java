@@ -1,22 +1,14 @@
 package com.sis.util.imageloader;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Base64;
 import android.util.Log;
 
-import com.mikelau.croperino.CropImage;
-import com.mikelau.croperino.CroperinoFileUtil;
-import com.mikelau.croperino.InternalStorageContentProvider;
-
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.InputStream;
 
 /**
@@ -24,42 +16,7 @@ import java.io.InputStream;
  */
 
 public class ImagePickerUtils {
-    public static void runCropImageForActivity(File file, Activity ctx, boolean isScalable, int aspectX, int aspectY, int color, int bgColor) {
-        Intent intent = new Intent(ctx, CropImage.class);
-        intent.putExtra("image-path", file.getPath());
-        intent.putExtra("scale", isScalable);
-        intent.putExtra("aspectX", aspectX);
-        intent.putExtra("aspectY", aspectY);
-        intent.putExtra("color", color);
-        intent.putExtra("bgColor", bgColor);
-        ctx.startActivityForResult(intent, 3);
-    }
 
-    public static void runCropImageForFragment(File file, Activity ctx, Fragment fragment, boolean isScalable, int aspectX, int aspectY, int color, int bgColor) {
-        Intent intent = new Intent(ctx, CropImage.class);
-        intent.putExtra("image-path", file.getPath());
-        intent.putExtra("scale", isScalable);
-        intent.putExtra("aspectX", aspectX);
-        intent.putExtra("aspectY", aspectY);
-        intent.putExtra("color", color);
-        intent.putExtra("bgColor", bgColor);
-        fragment.startActivityForResult(intent, 3);
-    }
-
-    public static void prepareCameraForFragment(Fragment fragment) throws Exception {
-        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-        Uri mImageCaptureUri = null;
-        String state = Environment.getExternalStorageState();
-        if ("mounted".equals(state)) {
-            mImageCaptureUri = Uri.fromFile(CroperinoFileUtil.newCameraFile());
-        } else {
-            mImageCaptureUri = InternalStorageContentProvider.CONTENT_URI;
-        }
-
-        intent.putExtra("output", mImageCaptureUri);
-        intent.putExtra("return-data", true);
-        fragment.startActivityForResult(intent, 1);
-    }
 
     public static void prepareGalleryForFragment(Fragment fragment) {
         Intent i = new Intent("android.intent.action.PICK", MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

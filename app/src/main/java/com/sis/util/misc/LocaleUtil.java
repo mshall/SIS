@@ -6,7 +6,8 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
-import com.activities.SplashActivity;
+
+import com.sis.MainActivity;
 
 import java.util.Locale;
 
@@ -26,7 +27,7 @@ public class LocaleUtil {
         Configuration conf = res.getConfiguration();
         conf.locale = locale;
         res.updateConfiguration(conf, dm);
-        Intent refresh = new Intent(context, SplashActivity.class);
+        Intent refresh = new Intent(context, MainActivity.class);
         context.startActivity(refresh);
     }
 }

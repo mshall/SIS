@@ -9,7 +9,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import com.activities.SplashActivity;
+
+import com.sis.MainActivity;
 
 import java.util.Locale;
 import java.util.Random;
@@ -29,7 +30,7 @@ public class Utils {
         Configuration conf = res.getConfiguration();
         conf.locale = locale;
         res.updateConfiguration(conf, dm);
-        Intent refresh = new Intent(context, SplashActivity.class);
+        Intent refresh = new Intent(context, MainActivity.class);
         context.startActivity(refresh);
     }
 
