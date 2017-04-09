@@ -70,7 +70,7 @@ public class CompletedCoursesFragment extends Fragment {
     }
 
     private void initializeViews() {
-        activity.toolbar.setTitle(getString(R.string.remaining_courses));
+        activity.toolbar.setTitle(getString(R.string.completed_courses));
         adapter = new RemainingCoursesAdapter(getContext(), courses);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

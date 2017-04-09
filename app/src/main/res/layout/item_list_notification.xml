@@ -9,9 +9,8 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
         app:cardCornerRadius="6dp"
-        app:cardElevation="7dp"
+        app:cardElevation="3dp"
         app:cardUseCompatPadding="true">
 
         <TextView
