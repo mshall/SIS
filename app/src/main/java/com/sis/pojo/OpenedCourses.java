@@ -1,5 +1,7 @@
 package com.sis.pojo;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -14,8 +16,9 @@ public class OpenedCourses implements Serializable {
      * response : success
      * data : [{"users":["16","student1","student","student@yahoo.com","male","kkkkk","makas","677676767","av1.png","3","2"],"course":{"id":"2","name":"course2","description":"for test","course_number":"12345","dept_id":"2","type":"temp","hours":"3","points":"4","years":"2015/2016","semester":"second","level":"1","status":"open","first_exam":"25","second_exam":"25","final_exam":"50"},"course_time_place":{"id":"2","course_id":"2","day":"sunday","time":" 12pm","building":"2","hole":"1"},"tutor_name":"tutor1"}]
      */
-
+    @SerializedName("response")
     private String response;
+    @SerializedName("data")
     private List<DataBean> data;
 
     public String getResponse() {
@@ -41,10 +44,13 @@ public class OpenedCourses implements Serializable {
          * course_time_place : {"id":"2","course_id":"2","day":"sunday","time":" 12pm","building":"2","hole":"1"}
          * tutor_name : tutor1
          */
-
+        @SerializedName("course")
         private CourseBean course;
+        @SerializedName("course_time_place")
         private CourseTimePlaceBean course_time_place;
+        @SerializedName("tutor_name")
         private String tutor_name;
+        @SerializedName("users")
         private List<String> users;
 
         public CourseBean getCourse() {
@@ -97,21 +103,35 @@ public class OpenedCourses implements Serializable {
              * second_exam : 25
              * final_exam : 50
              */
-
+            @SerializedName("id")
             private String id;
+            @SerializedName("name")
             private String name;
+            @SerializedName("description")
             private String description;
+            @SerializedName("course_number")
             private String course_number;
+            @SerializedName("dept_id")
             private String dept_id;
+            @SerializedName("type")
             private String type;
+            @SerializedName("hours")
             private String hours;
+            @SerializedName("points")
             private String points;
+            @SerializedName("years")
             private String years;
+            @SerializedName("semester")
             private String semester;
+            @SerializedName("level")
             private String level;
+            @SerializedName("status")
             private String status;
+            @SerializedName("first_exam")
             private String first_exam;
+            @SerializedName("second_exam")
             private String second_exam;
+            @SerializedName("final_exam")
             private String final_exam;
 
             public String getId() {
@@ -244,12 +264,17 @@ public class OpenedCourses implements Serializable {
              * building : 2
              * hole : 1
              */
-
+            @SerializedName("id")
             private String id;
+            @SerializedName("course_id")
             private String course_id;
+            @SerializedName("day")
             private String day;
+            @SerializedName("time")
             private String time;
+            @SerializedName("building")
             private String building;
+            @SerializedName("hole")
             private String hole;
 
             public String getId() {

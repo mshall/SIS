@@ -1,5 +1,7 @@
 package com.sis.pojo;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -14,8 +16,9 @@ public class StudentAssignment implements Serializable {
      * response : success
      * data : [{"assgin_id":"15","id":"15","name":"assign","start_date":"2016-03-01","recive_date":"2016-03-10","notes":"for test","dept_id":"1","course_id":"1","files":"hwamlcom_1290733192_413-1.jpg","direct":"all","tutor_id":"17","course_name":{"name":"course1"},"tutor_name":[{"name":"tutor1"}]},{"assgin_id":"16","id":"16","name":"assign2","start_date":"2016-03-29","recive_date":"2016-03-29","notes":"for test2","dept_id":"1","course_id":"1","files":"gJJTxP12141209.jpg","direct":"all","tutor_id":"17","course_name":{"name":"course1"},"tutor_name":[{"name":"tutor1"}]},{"assgin_id":"17","id":"17","name":"assign3","start_date":"2016-03-16","recive_date":"2016-03-16","notes":"for ","dept_id":"1","course_id":"2","files":"images (3).jpg","direct":"all","tutor_id":"17","course_name":{"name":"course2"},"tutor_name":[{"name":"tutor1"}]},{"assgin_id":"18","id":"18","name":"assign4","start_date":"2016-03-14","recive_date":"2016-03-29","notes":"test","dept_id":"1","course_id":"1","files":"images (5).jpg","direct":"all","tutor_id":"17","course_name":{"name":"course1"},"tutor_name":[{"name":"tutor1"}]}]
      */
-
+    @SerializedName("response")
     private String response;
+    @SerializedName("data")
     private List<DataBean> data;
 
     public String getResponse() {
@@ -50,19 +53,31 @@ public class StudentAssignment implements Serializable {
          * course_name : {"name":"course1"}
          * tutor_name : [{"name":"tutor1"}]
          */
-
+        @SerializedName("assgin_id")
         private String assgin_id;
+        @SerializedName("id")
         private String id;
+        @SerializedName("name")
         private String name;
+        @SerializedName("start_date")
         private String start_date;
+        @SerializedName("recive_date")
         private String recive_date;
+        @SerializedName("notes")
         private String notes;
+        @SerializedName("dept_id")
         private String dept_id;
+        @SerializedName("course_id")
         private String course_id;
+        @SerializedName("files")
         private String files;
+        @SerializedName("direct")
         private String direct;
+        @SerializedName("tutor_id")
         private String tutor_id;
+        @SerializedName("course_name")
         private CourseNameBean course_name;
+        @SerializedName("tutor_name")
         private List<TutorNameBean> tutor_name;
 
         public String getAssgin_id() {
@@ -173,7 +188,7 @@ public class StudentAssignment implements Serializable {
             /**
              * name : course1
              */
-
+            @SerializedName("name")
             private String name;
 
             public String getName() {
@@ -189,7 +204,7 @@ public class StudentAssignment implements Serializable {
             /**
              * name : tutor1
              */
-
+            @SerializedName("name")
             private String name;
 
             public String getName() {

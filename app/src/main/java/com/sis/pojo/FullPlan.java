@@ -1,5 +1,7 @@
 package com.sis.pojo;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -13,8 +15,9 @@ public class FullPlan implements Serializable {
      * response : success
      * data : [{"course":{"id":"2","name":"course2","description":"for test","course_number":"12345","dept_id":"2","type":"temp","hours":"3","points":"4","years":"2015/2016","semester":"second","level":"1","status":"open","first_exam":"25","second_exam":"25","final_exam":"50"}},{"course":{"id":"3","name":"course3","description":"for test","course_number":"15345","dept_id":"2","type":"required","hours":"2","points":"4","years":"2015/2016","semester":"first","level":"1","status":"closed","first_exam":"25","second_exam":"25","final_exam":"50"}}]
      */
-
+    @SerializedName("response")
     private String response;
+    @SerializedName("data")
     private List<DataBean> data;
 
     public String getResponse() {
@@ -37,7 +40,7 @@ public class FullPlan implements Serializable {
         /**
          * course : {"id":"2","name":"course2","description":"for test","course_number":"12345","dept_id":"2","type":"temp","hours":"3","points":"4","years":"2015/2016","semester":"second","level":"1","status":"open","first_exam":"25","second_exam":"25","final_exam":"50"}
          */
-
+        @SerializedName("course")
         private CourseBean course;
 
         public CourseBean getCourse() {
@@ -66,22 +69,37 @@ public class FullPlan implements Serializable {
              * second_exam : 25
              * final_exam : 50
              */
-
+            @SerializedName("id")
             private String id;
+            @SerializedName("name")
             private String name;
+            @SerializedName("description")
             private String description;
+            @SerializedName("course_number")
             private String course_number;
+            @SerializedName("dept_id")
             private String dept_id;
+            @SerializedName("type")
             private String type;
+            @SerializedName("hours")
             private String hours;
+            @SerializedName("points")
             private String points;
+            @SerializedName("years")
             private String years;
+            @SerializedName("semester")
             private String semester;
+            @SerializedName("level")
             private String level;
+            @SerializedName("status")
             private String status;
+            @SerializedName("first_exam")
             private String first_exam;
+            @SerializedName("second_exam")
             private String second_exam;
+            @SerializedName("final_exam")
             private String final_exam;
+
 
             public String getId() {
                 return id;

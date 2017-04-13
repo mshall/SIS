@@ -34,9 +34,10 @@ import retrofit2.Retrofit;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CompletedCoursesFragment extends Fragment {
+public class RegisteredCoursesFragment extends Fragment {
 
-    public static final String TAG = CompletedCoursesFragment.class.getName();
+
+    public static final String TAG = RegisteredCoursesFragment.class.getName();
     @BindView(R.id.recyclerView)
     CdsRecyclerView recyclerView;
     View view;
@@ -46,7 +47,7 @@ public class CompletedCoursesFragment extends Fragment {
     RemainingCoursesAdapter adapter;
     MainActivity activity;
 
-    public CompletedCoursesFragment() {
+    public RegisteredCoursesFragment() {
         // Required empty public constructor
     }
 
@@ -62,7 +63,7 @@ public class CompletedCoursesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_completed_courses, container, false);
+        view = inflater.inflate(R.layout.fragment_registered_courses, container, false);
         ButterKnife.bind(this, view);
         ((App) activity.getApplication()).getNetComponent().inject(this);
         initializeViews();
@@ -71,14 +72,14 @@ public class CompletedCoursesFragment extends Fragment {
     }
 
     private void initializeViews() {
-        activity.toolbar.setTitle(getString(R.string.completed_courses));
+        activity.toolbar.setTitle(getString(R.string.registered_courses));
         adapter = new RemainingCoursesAdapter(getContext(), courses);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
     public void getUserCourses() {
-        Call<Courses> remainingCourses = retrofit.create(Controller.class).getStudentCompletedCourses(LoginActivity.username);
+        Call<Courses> remainingCourses = retrofit.create(Controller.class).getStudentRegisteredCourses(LoginActivity.username);
         Log.e("Completed Courses URL:", remainingCourses.request().url().toString());
         remainingCourses.enqueue(new Callback<Courses>() {
             @Override

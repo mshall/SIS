@@ -31,7 +31,7 @@ public class RemainingCoursesAdapter extends CdsRecyclerViewAdapter<Courses.Data
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_list_notification, parent, false));
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_list_courses, parent, false));
     }
 
     //Cast the viewholder to your custom view holder and then use it
@@ -39,13 +39,17 @@ public class RemainingCoursesAdapter extends CdsRecyclerViewAdapter<Courses.Data
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         holder = (ViewHolder) holder;
         Courses.DataBean.CourseBean course = getList().get(position);
-        ((ViewHolder) holder).tvNotificationDesc.setText(course.getName());
+        ((ViewHolder) holder).tvCourseName.setText(course.getName());
+        ((ViewHolder) holder).tvCourseDesc.setText(course.getDescription());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.tvNotificationDesc)
-        TextView tvNotificationDesc;
+        @BindView(R.id.tvCourseName)
+        TextView tvCourseName;
+
+        @BindView(R.id.tvCourseDesc)
+        TextView tvCourseDesc;
 
         public ViewHolder(View itemView) {
             super(itemView);

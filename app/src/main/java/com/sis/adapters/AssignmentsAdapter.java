@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.gaurav.cdsrecyclerview.CdsRecyclerViewAdapter;
 import com.sis.R;
-import com.sis.pojo.Courses;
+import com.sis.pojo.StudentAssignment;
 
 import java.util.List;
 
@@ -20,36 +20,44 @@ import butterknife.ButterKnife;
  * Created by Mohamed S. El-Shall on 4/8/2017.
  */
 
-public class CompletedCoursesAdapter extends CdsRecyclerViewAdapter<Courses.DataBean.CourseBean, CompletedCoursesAdapter.ViewHolder> {
+public class AssignmentsAdapter extends CdsRecyclerViewAdapter<StudentAssignment.DataBean, AssignmentsAdapter.ViewHolder> {
 
     private Context mContext;
 
-    public CompletedCoursesAdapter(Context context, List<Courses.DataBean.CourseBean> list) {
+    public AssignmentsAdapter(Context context, List<StudentAssignment.DataBean> list) {
         super(context, list);
         mContext = context;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_list_courses, parent, false));
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_list_assignments, parent, false));
     }
 
     //Cast the viewholder to your custom view holder and then use it
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         holder = (ViewHolder) holder;
-        Courses.DataBean.CourseBean course = getList().get(position);
-        ((ViewHolder) holder).tvCourseName.setText(course.getName());
-        ((ViewHolder) holder).tvCourseDesc.setText(course.getDescription());
+        StudentAssignment.DataBean data = getList().get(position);
+        ((ViewHolder) holder).tvCourseName.setText(data.getCourse_name().getName());
+        ((ViewHolder) holder).tvAssignmentName.setText(data.getName());
+        ((ViewHolder) holder).tvStartDate.setText(data.getStart_date());
+        ((ViewHolder) holder).tvReceiveDate.setText(data.getRecive_date());
+        ((ViewHolder) holder).tvNote.setText(data.getNotes());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.tvAssignmentName)
+        TextView tvAssignmentName;
         @BindView(R.id.tvCourseName)
         TextView tvCourseName;
-
-        @BindView(R.id.tvCourseDesc)
-        TextView tvCourseDesc;
+        @BindView(R.id.tvStartDate)
+        TextView tvStartDate;
+        @BindView(R.id.tvReceiveDate)
+        TextView tvReceiveDate;
+        @BindView(R.id.tvNote)
+        TextView tvNote;
 
         public ViewHolder(View itemView) {
             super(itemView);

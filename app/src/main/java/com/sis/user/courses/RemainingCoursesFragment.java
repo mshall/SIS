@@ -14,6 +14,7 @@ import com.gaurav.cdsrecyclerview.CdsRecyclerView;
 import com.sis.MainActivity;
 import com.sis.R;
 import com.sis.adapters.RemainingCoursesAdapter;
+import com.sis.login.LoginActivity;
 import com.sis.network.App;
 import com.sis.network.Controller;
 import com.sis.pojo.Courses;
@@ -77,7 +78,7 @@ public class RemainingCoursesFragment extends Fragment {
     }
 
     public void getUserCourses() {
-        Call<Courses> remainingCourses = retrofit.create(Controller.class).getStudentRemainingCourses("16");
+        Call<Courses> remainingCourses = retrofit.create(Controller.class).getStudentRemainingCourses(LoginActivity.username);
         Log.e("Remaining Courses URL:", remainingCourses.request().url().toString());
         remainingCourses.enqueue(new Callback<Courses>() {
             @Override

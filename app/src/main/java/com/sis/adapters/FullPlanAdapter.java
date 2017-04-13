@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.gaurav.cdsrecyclerview.CdsRecyclerViewAdapter;
 import com.sis.R;
-import com.sis.pojo.Courses;
+import com.sis.pojo.FullPlan;
 
 import java.util.List;
 
@@ -20,34 +20,39 @@ import butterknife.ButterKnife;
  * Created by Mohamed S. El-Shall on 4/8/2017.
  */
 
-public class CompletedCoursesAdapter extends CdsRecyclerViewAdapter<Courses.DataBean.CourseBean, CompletedCoursesAdapter.ViewHolder> {
+public class FullPlanAdapter extends CdsRecyclerViewAdapter<FullPlan.DataBean, FullPlanAdapter.ViewHolder> {
 
     private Context mContext;
 
-    public CompletedCoursesAdapter(Context context, List<Courses.DataBean.CourseBean> list) {
+    public FullPlanAdapter(Context context, List<FullPlan.DataBean> list) {
         super(context, list);
         mContext = context;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_list_courses, parent, false));
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_list_full_plan, parent, false));
     }
 
     //Cast the viewholder to your custom view holder and then use it
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         holder = (ViewHolder) holder;
-        Courses.DataBean.CourseBean course = getList().get(position);
-        ((ViewHolder) holder).tvCourseName.setText(course.getName());
-        ((ViewHolder) holder).tvCourseDesc.setText(course.getDescription());
+        FullPlan.DataBean data = getList().get(position);
+        ((ViewHolder) holder).tvCourseName.setText(data.getCourse().getName());
+        ((ViewHolder) holder).tvCourseHours.setText(data.getCourse().getHours());
+        ((ViewHolder) holder).tvCoursePoints.setText(data.getCourse().getPoints());
+        ((ViewHolder) holder).tvCourseDesc.setText(data.getCourse().getDescription());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        @BindView(R.id.tvCourseHours)
+        TextView tvCourseHours;
         @BindView(R.id.tvCourseName)
         TextView tvCourseName;
-
+        @BindView(R.id.tvCoursePoints)
+        TextView tvCoursePoints;
         @BindView(R.id.tvCourseDesc)
         TextView tvCourseDesc;
 

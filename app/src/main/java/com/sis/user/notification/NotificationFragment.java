@@ -14,6 +14,7 @@ import com.gaurav.cdsrecyclerview.CdsRecyclerView;
 import com.sis.MainActivity;
 import com.sis.R;
 import com.sis.adapters.NotificationsAdapter;
+import com.sis.login.LoginActivity;
 import com.sis.network.App;
 import com.sis.network.Controller;
 import com.sis.pojo.Datum;
@@ -81,7 +82,7 @@ public class NotificationFragment extends Fragment {
     }
 
     public void getUserNotifications() {
-        Call<Notifications> notifications = retrofit.create(Controller.class).getUserNotifications("16");
+        Call<Notifications> notifications = retrofit.create(Controller.class).getUserNotifications(LoginActivity.username);
         Log.e("NOTIFICATION URL:", notifications.request().url().toString());
         notifications.enqueue(new Callback<Notifications>() {
             @Override

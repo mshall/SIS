@@ -22,4 +22,21 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="required">Required</string>
+    <string name="course_name">Course Name</string>
+    <string name="assignment_name">Assignment Name:</string>
+    <string name="assignment">Assignment</string>
+    <string name="course">Course</string>
+    <string name="start_date">Start date</string>
+    <string name="receive_date">Receive date</string>
+    <string name="note">Note</string>
+    <string name="student_assignments">My assignments</string>
+    <string name="my_assignments">My assignments</string>
+    <string name="description">Description</string>
+    <string name="hours">Hours</string>
+    <string name="points">Points</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="update">Update</string>
 </resources>

@@ -11,9 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sis.network.App;
+import com.sis.user.StudentAssignmentsFragment;
+import com.sis.user.StudentProfileFragment;
 import com.sis.user.courses.CompletedCoursesFragment;
+import com.sis.user.courses.RegisteredCoursesFragment;
 import com.sis.user.courses.RemainingCoursesFragment;
 import com.sis.user.notification.NotificationFragment;
+import com.sis.user.plan.StudentFullPlanFragment;
 import com.sis.util.fragment.FragmentUtils;
 
 import butterknife.BindView;
@@ -87,16 +91,16 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         switch (id) {
             case R.id.nav_my_profile:
-
+                fragmentUtils.navigateToFragment(R.id.content_main, new StudentProfileFragment(), StudentProfileFragment.TAG);
                 break;
             case R.id.nav_full_plan:
-
+                fragmentUtils.navigateToFragment(R.id.content_main, new StudentFullPlanFragment(), StudentFullPlanFragment.TAG);
                 break;
-            case R.id.nav_survey:
-
+            case R.id.nav_my_assignments:
+                fragmentUtils.navigateToFragment(R.id.content_main, new StudentAssignmentsFragment(), StudentAssignmentsFragment.TAG);
                 break;
             case R.id.nav_registered_courses:
-
+                fragmentUtils.navigateToFragment(R.id.content_main, new RegisteredCoursesFragment(), RegisteredCoursesFragment.TAG);
                 break;
             case R.id.nav_completed_courses:
                 fragmentUtils.navigateToFragment(R.id.content_main, new CompletedCoursesFragment(), CompletedCoursesFragment.TAG);
