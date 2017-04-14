@@ -17,6 +17,10 @@ import com.sis.login.LoginActivity;
 import com.sis.network.App;
 import com.sis.network.Controller;
 import com.sis.pojo.Profile;
+import com.sis.util.Constants;
+import com.sis.util.fragment.FragmentUtils;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -68,37 +72,42 @@ public class StudentProfileFragment extends Fragment {
         ButterKnife.bind(this, view);
         ((App) activity.getApplication()).getNetComponent().inject(this);
         profilePojo = new Profile();
+        activity.toolbar.setTitle(getString(R.string.my_profile));
         getProfileDetails();
         bUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                StudentProfileUpdateFragment fragment = new StudentProfileUpdateFragment();
+                Bundle args = new Bundle();
+                args.putSerializable(Constants.PROFILE, profilePojo);
+                fragment.setArguments(args);
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_main, fragment, StudentProfileUpdateFragment.TAG);
             }
         });
         return view;
     }
 
     public void getProfileDetails() {
-        final Call<Profile> profile = retrofit.create(Controller.class).getStudentProfile(LoginActivity.username);
+        final Call<ArrayList<Profile>> profile = retrofit.create(Controller.class).getStudentProfile(LoginActivity.username);
 
         Log.e("Profile details URL:", profile.request().url().toString());
-        profile.enqueue(new Callback<Profile>() {
+        profile.enqueue(new Callback<ArrayList<Profile>>() {
             @Override
-            public void onResponse(Call<Profile> call, Response<Profile> response) {
-                profilePojo.setName(response.body().getName());
-                profilePojo.setUser_email(response.body().getUser_email());
-                profilePojo.setPhone(response.body().getPhone());
-                profilePojo.setAddress(response.body().getAddress());
+            public void onResponse(Call<ArrayList<Profile>> call, Response<ArrayList<Profile>> response) {
+                profilePojo.setName(response.body().get(0).getName());
+                profilePojo.setUser_email(response.body().get(0).getUser_email());
+                profilePojo.setPhone(response.body().get(0).getPhone());
+                profilePojo.setAddress(response.body().get(0).getAddress());
                 //---------------
-                tvName.setText(response.body().getName());
-                tvEmail.setText(response.body().getUser_email());
-                tvPhone.setText(response.body().getPhone());
-                tvAddress.setText(response.body().getAddress());
+                tvName.setText(response.body().get(0).getName());
+                tvEmail.setText(response.body().get(0).getUser_email());
+                tvPhone.setText(response.body().get(0).getPhone());
+                tvAddress.setText(response.body().get(0).getAddress());
             }
 
             @Override
-            public void onFailure(Call<Profile> call, Throwable throwable) {
-
+            public void onFailure(Call<ArrayList<Profile>> call, Throwable throwable) {
+                Log.e("PROFILE DETAILS ERROR", throwable.getStackTrace().toString());
             }
         });
     }

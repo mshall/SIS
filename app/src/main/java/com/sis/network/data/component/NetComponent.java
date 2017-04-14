@@ -44,6 +44,8 @@ public interface NetComponent {
 
     void inject(StudentProfileFragment studentProfileFragment);
 
+    //void inject(Fragment fragment);
+
     void inject(StudentProfileUpdateFragment studentProfileUpdateFragment);
 }
 

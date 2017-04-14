@@ -10,4 +10,5 @@ public class Constants {
     public final static String Object = "Object";
     public final static String USERNAME = "username";
     public final static String PASSWORD = "password";
+    public static final String PROFILE = "profile";
 }

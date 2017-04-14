@@ -39,4 +39,6 @@
     <string name="phone">Phone</string>
     <string name="address">Address</string>
     <string name="update">Update</string>
+    <string name="error">Error, something wrong happened!</string>
+    <string name="update_my_profile">Update my profile</string>
 </resources>

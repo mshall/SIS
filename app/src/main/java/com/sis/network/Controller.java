@@ -8,6 +8,8 @@ import com.sis.pojo.Profile;
 import com.sis.pojo.Response;
 import com.sis.pojo.StudentAssignment;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -58,7 +60,7 @@ public interface Controller {
 
     //------ get student profile
     @GET("user_profile.php")
-    Call<Profile> getStudentProfile(@Query("user_id") String userId);
+    Call<ArrayList<Profile>> getStudentProfile(@Query("user_id") String userId);
 
     //------ update student profile
     @GET("update_profile.php")
